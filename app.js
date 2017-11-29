@@ -21,7 +21,7 @@ var app = express();
 
 //aqui va l abase de datos
 var mongoose = require('mongoose');
-var mongoDBConnectionString = 'mongodb://jaagirre_dev:EskolaEskola@ds257245.mlab.com:57245/local_library';
+var mongoDBConnectionString =process.env.MONGODB_URI || 'mongodb://jaagirre_dev:EskolaEskola@ds257245.mlab.com:57245/local_library';
 mongoose.connect(mongoDBConnectionString, {useMongoClient:true});
 
 var db = mongoose.connection;
